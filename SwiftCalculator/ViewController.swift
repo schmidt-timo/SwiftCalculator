@@ -12,8 +12,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var numberOnScreen = 0
-    var previousNumber = 0
+    var numberOnScreen:Double = 0
+    var previousNumber:Double = 0
     
     var applyOperator = false
     var operation = 0
@@ -23,19 +23,19 @@ class ViewController: UIViewController {
     @IBAction func numbers(_ sender: UIButton) {
         if applyOperator == true {
             label.text = String(sender.tag-1)
-            numberOnScreen = Int(label.text!)!
+            numberOnScreen = Double(label.text!)!
             applyOperator = false
         }
         else {
             label.text! += String(sender.tag-1)
-            numberOnScreen = Int(label.text!)!
+            numberOnScreen = Double(label.text!)!
         }
     }
     
     @IBAction func buttons(_ sender: UIButton) {
         // If any operator (+,-,/,*) gets pressed
         if label.text != "" && sender.tag != 11 && sender.tag != 16 {
-            previousNumber = Int(label.text!)!
+            previousNumber = Double(label.text!)!
             if sender.tag == 12 {           // Divide
                 label.text = "÷"
             }
@@ -54,16 +54,20 @@ class ViewController: UIViewController {
         // If "=" gets pressed
         else if sender.tag == 16 {
             if operation == 12 {            // Divide
-                 label.text = String(previousNumber / numberOnScreen)
+                let result = previousNumber / numberOnScreen
+                label.text = outputNumber(input: result)
              }
              else if operation == 13 {      // Multiply
-                 label.text = String(previousNumber * numberOnScreen)
+                 let result = previousNumber * numberOnScreen
+                 label.text = outputNumber(input: result)
              }
              else if operation == 14 {      // Minus
-                label.text = String(previousNumber - numberOnScreen)
+                let result = previousNumber - numberOnScreen
+                label.text = outputNumber(input: result)
              }
              else if operation == 15 {      // Plus
-                label.text = String(previousNumber + numberOnScreen)
+                let result = previousNumber + numberOnScreen
+                label.text = outputNumber(input: result)
              }
         }
         // If Reset Button ("C") gets pressed
@@ -73,6 +77,15 @@ class ViewController: UIViewController {
             previousNumber = 0
             numberOnScreen = 0
             operation = 0
+        }
+    }
+    
+    func outputNumber(input: Double) -> String {
+        if (floor(input) == input) { // if value is integer
+            return String(Int(input))
+        }
+        else {
+            return String(input)
         }
     }
     
