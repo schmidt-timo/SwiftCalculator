@@ -80,6 +80,9 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     Method for displaying the result as either Integer or floating-point number
+     */
     func outputNumber(input: Double) -> String {
         if (floor(input) == input) { // if value is integer
             return String(Int(input))
