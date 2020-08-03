@@ -34,6 +34,25 @@ class ViewController: UIViewController {
     
     @IBAction func buttons(_ sender: UIButton) {
         // If any operator (+,-,/,*) gets pressed
+        if operation != 0 { // for multiple calculations before pressing "="
+            if operation == 12 {            // Divide
+                let result = previousNumber / numberOnScreen
+                label.text = outputNumber(input: result)
+             }
+             else if operation == 13 {      // Multiply
+                 let result = previousNumber * numberOnScreen
+                 label.text = outputNumber(input: result)
+             }
+             else if operation == 14 {      // Minus
+                let result = previousNumber - numberOnScreen
+                label.text = outputNumber(input: result)
+             }
+             else if operation == 15 {      // Plus
+                let result = previousNumber + numberOnScreen
+                label.text = outputNumber(input: result)
+             }
+
+        }
         if label.text != "" && sender.tag != 11 && sender.tag != 16 {
             previousNumber = Double(label.text!)!
             if sender.tag == 12 {           // Divide
