@@ -1,5 +1,5 @@
 # SwiftCalculator
-A simple calculator written in Swift with a corresponding user interface\ 
+A simple calculator written in Swift with a corresponding user interface  
 (Integer calculation only, except for floating point number results of divisions)
 
 ## Updates:
