@@ -4,7 +4,7 @@ A simple calculator written in Swift with a corresponding user interface
 
 ## Added:
 ### on 2020-08-03
-- multiple calculations are now possible before tapping "="\
+- multiple calculations are now possible before tapping "="
 - font size of input/result string gets automatically decreased depending on the length
 
 ### Screenshot:
