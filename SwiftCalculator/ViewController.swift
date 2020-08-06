@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
+    // If any number gets pressed
     @IBAction func numbers(_ sender: UIButton) {
         if applyOperator == true {
             label.text = String(sender.tag-1)
