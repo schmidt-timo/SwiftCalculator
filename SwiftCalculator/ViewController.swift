@@ -4,6 +4,7 @@
 //  SwiftCalculator
 //
 //  Created by Timo Schmidt on 01.08.20
+//  Last changed by Timo Schmidt on 06.08.20
 //  based on Tutorial by The Swift Guy on YouTube
 //  Copyright © 2020 Timo Schmidt. All rights reserved.
 //
@@ -32,9 +33,11 @@ class ViewController: UIViewController {
         }
     }
     
+    // If any operator (+,-,/,*) gets pressed
     @IBAction func buttons(_ sender: UIButton) {
-        // If any operator (+,-,/,*) gets pressed
-        if operation != 0 { // for multiple calculations before pressing "="
+
+        // for multiple calculations before pressing "="
+        if operation != 0 {
             if operation == 12 {            // Divide
                 let result = previousNumber / numberOnScreen
                 label.text = outputNumber(input: result)
@@ -53,6 +56,7 @@ class ViewController: UIViewController {
              }
 
         }
+        
         if label.text != "" && sender.tag != 11 && sender.tag != 16 {
             previousNumber = Double(label.text!)!
             if sender.tag == 12 {           // Divide
@@ -70,6 +74,7 @@ class ViewController: UIViewController {
             operation = sender.tag
             applyOperator = true
         }
+            
         // If "=" gets pressed
         else if sender.tag == 16 {
             if operation == 12 {            // Divide
@@ -89,6 +94,7 @@ class ViewController: UIViewController {
                 label.text = outputNumber(input: result)
              }
         }
+            
         // If Reset Button ("C") gets pressed
         else if sender.tag == 11 {  // Reset Button
             // Reset all values and set display to empty String
@@ -115,7 +121,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
 
 }
 
