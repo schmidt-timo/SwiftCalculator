@@ -95,6 +95,7 @@ class ViewController: UIViewController {
             }
             operation = sender.tag
             applyOperator = true
+            equalsWasPressed = false
         }
             
         // If "=" gets pressed
