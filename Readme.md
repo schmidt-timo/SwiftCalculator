@@ -9,6 +9,7 @@ A simple calculator written in Swift with a corresponding user interface
 
 ### on 2020-08-06
 - leading zero isn't displayed anymore
+- tapping a number after using "=" is now doing a new calculation (similar to a reset)
 
 ## Screenshots:
 App Icon:\
