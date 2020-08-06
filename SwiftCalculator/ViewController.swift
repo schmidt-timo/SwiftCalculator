@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         if sender.tag == 1 && numberOnScreen == 0 {
             label.text! += ""
         }
-        else if applyOperator == true {
+        else if applyOperator {
             // Leading 0 after operator isn't displayed
             if sender.tag == 1 {
                 label.text! += ""
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         }
         else {
             // Number after equals (= same as reset)
-            if equalsWasPressed == true {
+            if equalsWasPressed {
                 previousNumber = 0
                 operation = 0
                 label.text! = String(sender.tag-1)
