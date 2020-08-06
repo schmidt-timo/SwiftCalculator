@@ -23,10 +23,20 @@ class ViewController: UIViewController {
     
     // If any number gets pressed
     @IBAction func numbers(_ sender: UIButton) {
-        if applyOperator == true {
-            label.text = String(sender.tag-1)
-            numberOnScreen = Double(label.text!)!
-            applyOperator = false
+        // Leading 0 isn't displayed
+        if sender.tag == 1 && numberOnScreen == 0 {
+            label.text! += ""
+        }
+        else if applyOperator == true {
+            // Leading 0 after operator isn't displayed
+            if sender.tag == 1 {
+                label.text! += ""
+            }
+            else {
+                label.text = String(sender.tag-1)
+                numberOnScreen = Double(label.text!)!
+                applyOperator = false
+            }
         }
         else {
             label.text! += String(sender.tag-1)

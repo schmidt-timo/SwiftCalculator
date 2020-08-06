@@ -7,6 +7,9 @@ A simple calculator written in Swift with a corresponding user interface
 - multiple calculations are now possible before tapping "="
 - font size of input/result string gets automatically decreased depending on the length
 
+### on 2020-08-06
+- leading zero isn't displayed anymore
+
 ## Screenshots:
 App Icon:\
 ![App Icon](https://www.timoschmidt.dev/wp-content/uploads/2020/08/SwiftCalc_Icon.png)
