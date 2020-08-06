@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     var numberOnScreen:Double = 0
     var previousNumber:Double = 0
-    
+    var equalsWasPressed = false
     var applyOperator = false
     var operation = 0
     
@@ -39,8 +39,19 @@ class ViewController: UIViewController {
             }
         }
         else {
-            label.text! += String(sender.tag-1)
-            numberOnScreen = Double(label.text!)!
+            // Number after equals (= same as reset)
+            if equalsWasPressed == true {
+                previousNumber = 0
+                operation = 0
+                label.text! = String(sender.tag-1)
+                numberOnScreen = Double(label.text!)!
+                equalsWasPressed = false
+            }
+            else {
+                label.text! += String(sender.tag-1)
+                numberOnScreen = Double(label.text!)!
+            }
+
         }
     }
     
@@ -104,6 +115,7 @@ class ViewController: UIViewController {
                 let result = previousNumber + numberOnScreen
                 label.text = outputNumber(input: result)
              }
+            equalsWasPressed = true
         }
             
         // If Reset Button ("C") gets pressed
