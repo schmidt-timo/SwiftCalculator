@@ -11,6 +11,9 @@ A simple calculator written in Swift with a corresponding user interface
 - leading zero isn't displayed anymore
 - tapping a number after using "=" is now doing a new calculation (similar to a reset)
 
+### on 2020-09-01
+- auto layout for all iOS devices
+
 ## Screenshots:
 App Icon:\
 ![App Icon](https://www.timoschmidt.dev/wp-content/uploads/2020/08/SwiftCalc_Icon.png)
